@@ -1,11 +1,10 @@
 header <- dashboardHeader(
   title = "Durk's Shiny App"
 )
-
 sidebar <- dashboardSidebar(
   sidebarMenu(
-    menuItem("Dashboard Menu Text Test", tabName = "dashboard", icon = icon("dashboard")),
     menuItem("Liquor Store Prices", tabName = "tab_2", icon = icon("balance-scale")),
+    menuItem("Information", tabName = "dashboard", icon = icon("dashboard")),
     tags$div(
       style = "position: absolute; bottom: 0;",
       a(
@@ -41,14 +40,15 @@ body <- dashboardBody(
         column(
           width = 12,
           box(
+              width=3,
             sliderInput(
-              "priceInput", "Price",
-              min = 0, max = 100,
-              value = c(25,40), pre = "$",
+              "priceInput", h2("Price"),
+              min = 0, max = 130,
+              value = c(20,45), pre = "$",
             ),
             radioButtons("typeInput", "Product type",
-                         choices = c("BEER", "REFRESHMENT", "SPIRITS", "WINE"),
-                         selected = "BEER"),
+                         choices = c("BEER", "SPIRITS", "WINE"),
+                         selected = "WINE"),
             uiOutput("countryOutput")
         ),
           box(

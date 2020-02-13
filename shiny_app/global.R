@@ -5,6 +5,7 @@ library(shinydashboard)
 library(tychobratools)
 library(ggplot2)
 library(rsconnect)
+library(highcharter   )
 tychobratools::hc_global_options()
 
-bcl <- read.csv("bcl-data.csv", stringsAsFactors = FALSE)
+bcl <- read.csv("data/bcl-data.csv", stringsAsFactors = FALSE)

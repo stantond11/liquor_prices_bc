@@ -17,8 +17,7 @@ function(input, output, session) {
   
   output$countryOutput <- renderUI({
     selectInput("countryInput", "Country",
-                sort(unique(bcl$Country)),
-                selected = "UNITED STATES OF AMERICA")
+                choices = c("CANADA", "FRANCE", "ITALY"))
   })
   
   output$coolplot <- renderPlot({
